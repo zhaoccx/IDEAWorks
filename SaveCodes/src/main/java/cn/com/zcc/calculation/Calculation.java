@@ -39,7 +39,7 @@ public class Calculation {
                 System.out.println("ssssssssssssssssssssssssss");
                 initMap.put(entry.getKey(), 9000D / 15);
             }else {
-                // TODO entry.getKey()是double比较的问题
+                // TODO entry.getKey()是double比较的问题..................
                 initMap.put(entry.getKey(), (initMap.get(entry.getKey()+1.0D) - initMap.get(entry.getKey()) )/ 15);
 
 
