@@ -51,10 +51,10 @@ public class Calculation {
 
     /**
      * 循环法
-     * @param init
-     * @param rate
-     * @param year
-     * @param doublemap
+     * @param init 初始化金额
+     * @param rate 利率
+     * @param year 年份
+     * @param doublemap 保存相关信息。
      * @return
      */
     public double Calcsforeach(Double init, Double rate, int year, Map<Integer, Salarys> doublemap){
