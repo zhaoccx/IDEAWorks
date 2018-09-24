@@ -2,6 +2,7 @@ package cn.com.zcc.calculation;
 
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 简单的复利计算
@@ -11,13 +12,13 @@ public class Calculation {
 
     /**
      * 迭代法
-     * @param init
-     * @param rate
-     * @param year
-     * @param doublemap
-     * @return
+     * @param init 初始华
+     * @param rate 利率
+     * @param year 年份
+     * @param doublemap 数据
+     * @return 目标金额
      */
-    public double getCalcs(double init, double rate, int year, Map<String, Double> doublemap){
+    double getCalcs(double init, double rate, int year, Map<String, Double> doublemap){
         if (year<=0){
             return init;
         }
@@ -33,7 +34,7 @@ public class Calculation {
     }
 
 
-    public Map<String,Double> getAverage(Map<String,Double> initMap){
+    public Map<String,Double> getAverage(Map<String, Double> initMap){
         for (Map.Entry<String, Double> entry : initMap.entrySet()) {
             if ("1.0".equals(entry.getKey())) {
                 System.out.println("ssssssssssssssssssssssssss");
@@ -55,7 +56,7 @@ public class Calculation {
      * @param rate 利率
      * @param year 年份
      * @param doublemap 保存相关信息。
-     * @return
+     * @return 结果
      */
     public double Calcsforeach(Double init, Double rate, int year, Map<Integer, Salarys> doublemap){
       //  doublemap.put(0,new Salarys(0,init,0D));
@@ -70,5 +71,26 @@ public class Calculation {
 
 
         return  init;
+    }
+
+    /**
+     * 循环法
+     * @param init 初始化金额
+     * @param rate 利率
+     * @param year 年份
+     * @return 数据map
+     */
+    public Map<Integer, Salarys> getMapCalcsforeach(Double init, Double rate, int year){
+        Map<Integer, Salarys> doublemap= new ConcurrentHashMap<>();
+        for (int i = 1; i <= year; i++) {
+
+
+            doublemap.put(i,new Salarys(i,init*rate/100+init,10,init));
+            init += init*rate/100;
+
+        }
+
+
+        return  doublemap;
     }
 }
