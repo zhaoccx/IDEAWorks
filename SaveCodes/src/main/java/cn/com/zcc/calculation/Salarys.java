@@ -73,8 +73,7 @@ public class Salarys {
     }
 
     /**
-     *
-     * @param year 年份
+     * @param year       年份
      * @param allSalarys 当年总金额
      * @param initSalary 上年总金额
      */
@@ -82,12 +81,12 @@ public class Salarys {
         this.year = year;
         this.allSalarys = allSalarys;
         this.initSalary = initSalary;
-        if (null == this.getAverageMenthy()){
+        if (null == this.getAverageMenthy()) {
             this.setAverageMenthy(12);
         }
 
-        this.setInterest(this.getAllSalarys()-this.getInitSalary());
-        this.setAverageSalary(this.getInterest()/this.getAverageMenthy());
+        this.setInterest(this.getAllSalarys() - this.getInitSalary());
+        this.setAverageSalary(this.getInterest() / this.getAverageMenthy());
 
     }
 
@@ -96,7 +95,7 @@ public class Salarys {
         this.allSalarys = allSalarys;
         this.averageMenthy = averageMenthy;
         this.initSalary = initSalary;
-        this.setInterest(this.getAllSalarys()-this.getInitSalary());
-        this.setAverageSalary(this.getInterest()/this.getAverageMenthy());
+        this.setInterest(this.getAllSalarys() - this.getInitSalary());
+        this.setAverageSalary(this.getInterest() / this.getAverageMenthy());
     }
 }
