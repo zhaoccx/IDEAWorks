@@ -12,5 +12,7 @@ public class TestOperation{
 		System.out.println(" 1 / 3.0 = " + (1 / 3.0));
 		
 		System.out.println(" 1.0 / 0 = " + (1.0 / 0));
+
+		System.out.println("lGqL");
 	}
 }
