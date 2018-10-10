@@ -43,8 +43,9 @@ public class CalculationTest {
     public void testCalcsforeachOther() {
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(0);//这里是小数位
-        // 201810->31112
-        Map<Integer, Salarys> map = new Calculation().getMapCalcsforeach(31112D, 20D, 2);
+        // 20181008->31112
+        // 20181009->24279
+        Map<Integer, Salarys> map = new Calculation().getMapCalcsforeach(24279D, 20D, 2);
         List<Double> list = new ArrayList<>();
 
         for (Map.Entry<Integer, Salarys> entry : map.entrySet()) {
