@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -44,8 +45,8 @@ public class CalculationTest {
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(0);//这里是小数位
         // 20181008->31112
-        // 20181009->24279
-        Map<Integer, Salarys> map = new Calculation().getMapCalcsforeach(24279D, 20D, 2);
+        // 20181025->16110，
+        Map<Integer, Salarys> map = new Calculation().getMapCalcsforeach(4000, 20D, 3);
         List<Double> list = new ArrayList<>();
 
         for (Map.Entry<Integer, Salarys> entry : map.entrySet()) {
@@ -57,13 +58,29 @@ public class CalculationTest {
 
         for (int i = 0; i < list.size(); i++) {
             if (i == 0) {
-                System.out.println((i + 1) + "\t" + df.format(list.get(i)) + "\t" + df.format(list.get(1) - list.get(0)));
+                System.out.println((i + 1) + "\t\t" + df.format(list.get(i)) + "\t\t\t\t" + df.format(list.get(1) - list.get(0)));
             } else {
-                System.out.println((i + 1) + "\t" + df.format(list.get(i)) + "\t" + df.format(list.get(i) - list.get(i - 1)));
+                System.out.println((i + 1) + "\t\t" + df.format(list.get(i)) + "\t\t\t\t" + df.format(list.get(i) - list.get(i - 1)));
 
             }
         }
 //        System.out.println(list);
     }
 
+
+    @Test
+    public void testCalcsTime(){
+        String string = "5年7个月";
+        String [] years = string.split("年");
+        String [] months = years[1].split("个");
+
+//        int yes = 0-Integer.valueOf(years[0])
+//        System.out.println(Integer.getInteger(years[0]));
+//        System.out.println(Integer.getInteger(months[0]));
+        Calendar my = Calendar.getInstance();
+        my.add(Calendar.YEAR,-Integer.valueOf(years[0]));
+        my.add(Calendar.MONDAY,-Integer.valueOf(months[0]));
+        System.out.println(my.get(Calendar.YEAR)+"年"+my.get(Calendar.MONDAY)+"月");
+
+    }
 }

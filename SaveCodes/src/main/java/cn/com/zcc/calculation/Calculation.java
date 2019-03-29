@@ -96,4 +96,16 @@ public class Calculation {
 
         return doublemap;
     }
+
+    /**
+     * 循环法
+     *
+     * @param init 初始化金额
+     * @param rate 利率
+     * @param year 年份
+     * @return 数据map
+     */
+    public Map<Integer, Salarys> getMapCalcsforeach(Integer init, Double rate, int year) {
+       return getMapCalcsforeach(Double.valueOf(init),rate,year);
+    }
 }
