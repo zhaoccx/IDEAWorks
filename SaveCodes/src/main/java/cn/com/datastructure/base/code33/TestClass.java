@@ -19,6 +19,7 @@ class Animal {
 
 class Cat extends Animal {
 
+	@Override
 	public void run() {
 		System.out.println("猫在跑");
 	}
@@ -26,6 +27,7 @@ class Cat extends Animal {
 
 class Dog extends Animal {
 
+	@Override
 	public void run() {
 		System.out.println("狗在跑");
 	}

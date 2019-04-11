@@ -46,10 +46,12 @@ public class OrderList {
             count++;
         }
 
-        if (curl1 != null)
-        curl1.next = null;
-        if (curl2 != null)
-        curl2.next = null;
+        if (curl1 != null){
+            curl1.next = null;
+        }
+        if (curl2 != null){
+            curl2.next = null;
+        }
         return new ListNode[]{head1, head2};
 
     }
