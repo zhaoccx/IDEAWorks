@@ -96,6 +96,27 @@ public class Calculation {
 
         return doublemap;
     }
+    /**
+     * 循环法
+     *
+     * @param init 初始化金额
+     * @param rate 利率
+     * @param year 年份
+     * @return 数据map
+     */
+    public Map<Integer, Salarys> getMapCalcsforeach(Double init, Double rate, int year,int average) {
+        Map<Integer, Salarys> doublemap = new ConcurrentHashMap<>();
+        for (int i = 1; i <= year; i++) {
+
+
+            doublemap.put(i, new Salarys(i, init * rate / 100 + init, average, init));
+            init += init * rate / 100;
+
+        }
+
+
+        return doublemap;
+    }
 
     /**
      * 循环法
@@ -107,5 +128,18 @@ public class Calculation {
      */
     public Map<Integer, Salarys> getMapCalcsforeach(Integer init, Double rate, int year) {
        return getMapCalcsforeach(Double.valueOf(init),rate,year);
+    }
+
+
+    /**
+     * 循环法
+     *
+     * @param init 初始化金额
+     * @param rate 利率
+     * @param year 年份
+     * @return 数据map
+     */
+    public Map<Integer, Salarys> getMapCalcsforeachAverage(Integer init, Double rate, int year,int average) {
+        return getMapCalcsforeach(Double.valueOf(init),rate,year,average);
     }
 }
