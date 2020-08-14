@@ -148,7 +148,7 @@ public class CalculationTest {
     public void newCalculationSalary(){
         Double initSalary = 10931D;
         Double initRate = 4D;
-        int initYear = 50;
+        int initYear = 2;
         BaseSalary baseSalary = new BaseSalary(initSalary, initRate);
         CalculationSalary calculationSalary = new CalculationSalary();
         List<BaseSalary> list = calculationSalary.calculationSalaryInit(baseSalary, initYear);

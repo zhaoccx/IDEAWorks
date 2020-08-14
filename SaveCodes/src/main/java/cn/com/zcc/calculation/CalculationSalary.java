@@ -29,11 +29,11 @@ public class CalculationSalary {
         for (int i = 0; i < baseSalaryList.size(); i++) {
 
             System.err.println(i + ": " + "BaseSalary: {" +
-                    " laterSalary = " + decimalFormat.format(baseSalaryList.get(i).getLaterSalary()) +
-                    ", increaseSalary = " + decimalFormat.format(baseSalaryList.get(i).getIncreaseSalary()) +
                     ", nowSalary = " + decimalFormat.format(baseSalaryList.get(i).getNowSalary()) +
                     ", reduceSalary = " + decimalFormat.format(baseSalaryList.get(i).getReduceSalary()) +
                     ", futureSalary = " + decimalFormat.format(baseSalaryList.get(i).getFutureSalary()) +
+                    " laterSalary = " + decimalFormat.format(baseSalaryList.get(i).getLaterSalary()) +
+                    ", increaseSalary = " + decimalFormat.format(baseSalaryList.get(i).getIncreaseSalary()) +
                     ", rates = " + decimalFormat.format(baseSalaryList.get(i).getRates()) +
                     " }");
 
