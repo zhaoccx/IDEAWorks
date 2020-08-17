@@ -146,7 +146,7 @@ public class CalculationTest {
      */
     @Test
     public void newCalculationSalary(){
-        Double initSalary = 10931D;
+        Double initSalary = 11849D;
         Double initRate = 4D;
         int initYear = 2;
         BaseSalary baseSalary = new BaseSalary(initSalary, initRate);
