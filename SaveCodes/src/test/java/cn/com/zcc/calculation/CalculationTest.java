@@ -138,7 +138,7 @@ public class CalculationTest {
                 System.err.println((i + 1) + ": " + decimalFormat.format(list.get(i)) + " 【" + decimalFormat.format(list.get(i) - list.get(i - 1)) + "】 " + instance.get(Calendar.YEAR) + "-" + (instance.get(Calendar.MONDAY) + 1) + "-" + instance.get(Calendar.DAY_OF_MONTH));
             }
         }
-//        System.out.println(list);OK
+//        System.out.println(list);
     }
 
     /**
